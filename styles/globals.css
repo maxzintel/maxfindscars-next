@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: 
+    url('/bg2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Franklin', sans-serif;
+  /* font-family: 'Times New Roman', sans-serif;
+  font-family: 'Grotesk', sans-serif; */
+  font-family: 'Folio', sans-serif;
+}
