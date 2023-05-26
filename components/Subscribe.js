@@ -1,7 +1,7 @@
 // components/Subscribe.js
 export default function Subscribe() {
   return (
-    <form className="font-folio w-full max-w-lg mx-auto mt-8 bg-white p-4 rounded-lg">
+    <form className="font-folio w-full max-w-lg mt-8 bg-white p-4 rounded-lg">
       <div className="relative">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg
