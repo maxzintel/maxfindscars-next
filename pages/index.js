@@ -13,8 +13,11 @@ export default function Home() {
           {/* <img src="/964turbo.png" alt="Porsche 993 Turbo" className="w-full max-w-md mx-auto"/> */}
         </div>
         <div className="flex flex-col md:flex-row items-start justify-start md:space-x-8 mt-8">
+          {/* <h2 className='font-folio text-xl max-w-md'>Subscribe now to join our growing gaggle of car lovers and get a twice weekly newsletter showing off the most interesting cars for sale online and telling their stories.</h2> */}
+          <h2 className='font-folio text-lg max-w-md'>We make cars for sale entertaining and funny. Join to get our 5 min newsletter showcasing the most interesting cars for sale online.</h2>
+        </div>
+        <div className="flex flex-col md:flex-row items-start justify-start md:space-x-8 mt-1">
           <Subscribe />
-          {/* <h2 className='font-folio text-xl max-w-md mx-auto'>Subscribe now to join our growing gaggle of car lovers and get a twice weekly newsletter showing off the most interesting cars for sale online and telling their stories.</h2> */}
         </div>
       </div>
       <Footer />
