@@ -9,9 +9,13 @@ export default function Home() {
       <Header />
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-start md:justify-between md:space-x-8">
-          <h1 className='font-franklin text-7xl mb-8 md:mb-0 md:mr-auto'>The Most <br></br> Interesting <br></br>Cars on the <br></br> Internet, <br></br>In Your Inbox.</h1>
-          {/* <h1 className='font-franklin text-7xl mb-8 md:mb-0 md:mr-auto'>Here's Our Best Shit</h1> */}
-          <img src="/mullet.png" alt="Porsche 993 Turbo" className="w-full max-w-lg mx-auto md:mx-0"/>
+          <div className='max-w-2xl'>
+            <h1 className='font-franklin text-7xl mb-2 md:mb-0'>The Most Interesting Cars on the Internet,</h1>
+            <div style={{ background: 'radial-gradient(circle, rgba(251,243,4,1) 0%, rgba(249,180,65,1) 50%, rgba(183,17,22,1) 100%)', borderRadius: '20px'}}>
+            <img src="/vector-911.png" alt="Porsche 993 Turbo" className="w-full mx-auto md:mx-0"/>
+            </div>
+            <h1 className='font-franklin text-7xl mb-1 md:mb-0'>In Your Inbox.</h1>
+          </div>
         </div>
         <div className="flex flex-col md:flex-row items-start justify-start md:space-x-8 mt-8">
           <h2 className='font-folio text-lg max-w-lg'>We make cars for sale entertaining. Join to get our 5 min newsletter showcasing the most interesting cars for sale online.</h2>
@@ -24,3 +28,6 @@ export default function Home() {
     </main>
   )
 }
+
+
+{/* <h1 className='font-franklin text-7xl mb-8 md:mb-0 md:mr-auto'>Here's Our Best Shit</h1> */}
