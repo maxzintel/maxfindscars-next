@@ -5,12 +5,12 @@ import Subscribe from "@/components/Subscribe";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen pt-10">
+    <main className="flex flex-col items-center justify-center min-h-screen pt-10 bg-off-black text-off-white">
       <Header />
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-start md:justify-between md:space-x-8">
           <div className='w-full md:max-w-4/5'>
-            <h1 className='font-franklin text-8xl mb-2 md:mb-0'>The Most Interesting Cars on the Internet,</h1>
+            <h1 className='font-franklin text-8xl mb-2 md:mb-0'>The Most Interesting Cars <br></br>on the Internet,</h1>
             <div className='mt-1' style={{ 
               background: 'radial-gradient(circle, rgba(251,243,4,1) 0%, rgba(249,180,65,1) 50%, rgba(183,17,22,1) 100%)', 
               borderRadius: '20px',

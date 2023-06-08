@@ -8,10 +8,23 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.text-off-white {
+  color: #f0f0f0
+}
+
+.bg-off-black {
+  background-color: #121212
+}
+
+.bg-elevated-1 {
+  /* background-color: #202020; */
+  background-color: #191919;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: 
-    url('/bg2.jpg');
+  /* background: 
+    url('/bg2.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
