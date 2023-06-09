@@ -8,6 +8,47 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+@keyframes gradient-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-hover:hover {
+  animation: gradient-shine 3s ease-in-out infinite;
+}
+
+.main::before,
+.main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease;
+}
+
+.main::before {
+  background: linear-gradient(45deg, rgba(251,243,4,1) 0%, rgba(249,180,65,1) 50%, rgba(183,17,22,1) 100%);
+  opacity: var(--opacity);
+}
+
+.main::after {
+  background: linear-gradient(135deg, rgba(251,243,4,1) 0%, rgba(249,180,65,1) 50%, rgba(183,17,22,1) 100%);
+}
+
+.gradient-box {
+  position: relative;
+}
+
+
 .text-off-white {
   color: #f0f0f0
 }
