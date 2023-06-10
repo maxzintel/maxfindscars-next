@@ -23,8 +23,7 @@ export default function Home() {
               backgroundSize: '200% 200%',
               // padding: '1rem 0', // add padding to ensure content isn't too close to the edges
             }}>
-              <img src="/vector-911.png" alt="Porsche 993 Turbo" className="sm:w-2/3 md:w-2/3 lg:w-2/3 xl:w-2/3 2xl:w-2/3 object-cover mt-6"/>
-
+              <img src="/vector-911.png" alt="Porsche 993 Turbo" className="sm:w-2/3 md:w-2/3 lg:w-2/3 xl:w-1/2 2xl:w-1/2 object-cover mt-6"/>
               <Subscribe/>
             </div>
             <h1 className='font-franklin sm:text-6xl md:text-8xl mb-1 md:mb-0'>In Your Inbox.</h1>
@@ -34,15 +33,12 @@ export default function Home() {
           <div>
             <h2 className='font-folio text-lg max-w-lg'>We make cars for sale entertaining. Join to get our 5 min newsletter showcasing the most interesting cars for sale online.</h2>
           </div>
+          <h2></h2>
           <div className='mt-1 gradient-hover' style={{ 
               background: 'radial-gradient(circle, rgba(251,243,4,1) 0%, rgba(249,180,65,1) 50%, rgba(183,17,22,1) 100%)', 
               borderRadius: '20px',
               height: '15vh',
               width: '50%',
-              // display: 'grid',
-              // gridTemplateColumns: 'repeat(2, 1fr)',
-              // gridTemplateRows: 'repeat(2, 1fr)',
-              // gap: '5px',
               justifyContent: 'center',
               alignItems: 'center',
               backgroundSize: '200% 200%',

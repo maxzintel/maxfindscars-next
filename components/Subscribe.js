@@ -21,7 +21,7 @@ export default function Subscribe() {
           className="bg-white border border-gray-300 text-gray-900 text-lg focus:ring-0 focus-visible:outline-none rounded-lg block w-full pl-10 pr-20 py-2"
           placeholder="Your Email Address..."
         />
-        <button type="submit" className="absolute inset-y-1 right-1 flex items-center px-4 font-bold text-black bg-yellow-300  hover:bg-yellow-400 rounded-lg">
+        <button type="submit" className="absolute inset-y-1 right-1 flex items-center px-4 font-bold text-black bg-red-600 hover:bg-red-500 rounded-lg">
           SUBSCRIBE
         </button>
       </div>
