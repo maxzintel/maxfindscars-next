@@ -1,54 +1,51 @@
 // pages/index.js
-import Header from "../components/Header";
-import Footer from "@/components/Footer";
-import Subscribe from "@/components/Subscribe";
+import React from 'react';
+import SubscriptionForm from '@/components/SignupForm';
+// import RecentPosts from '@/components/RecentPosts';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen pt-1 bg-off-black text-off-white">
+    <main>
       <Header />
-      <div className="container mx-auto">
-        <div className="flex flex-col items-start justify-between space-x-8">
-          <div className='w-full md:max-w-4/5'>
-            <h1 className='font-franklin md:text-8xl sm:text-6xl text-6xl mb-2 '>The Most Interesting Cars <br></br>on the Internet,</h1>
-            <div className='mt-1 gradient-hover' style={{ 
-              background: 'radial-gradient(circle, rgba(251,243,4,1) 0%, rgba(249,180,65,1) 50%, rgba(183,17,22,1) 100%)', 
-              borderRadius: '20px',
-              height: '25vh',
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              backgroundSize: '200% 200%',
-              // padding: '1rem 0', // add padding to ensure content isn't too close to the edges
-            }}>
-              <img src="/vector-911.png" alt="Porsche 993 Turbo" className="sm:w-2/3 md:w-2/3 lg:w-2/3 xl:w-1/2 2xl:w-1/2 object-cover mt-6"/>
-              <Subscribe/>
+      <div className="container border-black p-5 m-2 mt-0">
+        <h1 className="left-0 font-bold text-3xl">
+          THE MOST INTERESTING CARS ON THE INTERNET, IN YOUR INBOX.
+        </h1>
+        <h2 className="text-lg left-0 font-bold mt-3">
+        ✍️ Written by an ex-BMW Engineer
+        </h2>
+      </div>
+      <div className="flex flex-col md:flex-row justify-around w-full">
+        <div className="bg-antiquewhite md:w-1/2 lg:h-72 md:h-72 sm:h-60 flex items-center justify-center m-4">
+          <SubscriptionForm />
+        </div>
+        <div className="bg-antiquewhite m-4 md:w-1/2 h-72 flex flex-col items-center justify-center">
+          <p className="p-3 text-base mb-4 mt-4 font-bold">
+            📚 Read by the people who build, create, and run...
+          </p>
+          <div className="m-2 p-4">
+            <div className='m-2'>
+              <img src="./brands.png" className='max-w-full h-auto' alt="Logos of brands such as BMW, Hagerty, The Hustle, and Morning Brew"/>
             </div>
-            <h1 className='font-franklin sm:text-6xl md:text-8xl mb-1 md:mb-0'>In Your Inbox.</h1>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row items-start justify-start md:space-x-8 mt-8">
-          <div>
-            <h2 className='font-folio text-lg max-w-lg'>We make cars for sale entertaining. Join to get our 5 min newsletter showcasing the most interesting cars for sale online.</h2>
+      </div>
+      <div className="mt-5">
+        <h2 className="text-center text-3xl font-bold mb-5">🤔 STILL NOT CONVINCED?</h2>
+        <div className="flex flex-col md:flex-row justify-between w-full">
+          <div className="md:w-1/2 p-5">
+            <h3 className="text-xl font-bold mb-3 text-center">WHAT YOU GET WHEN YOU SIGN UP:</h3>
+            <ul className="list-disc list-outside ml-5">
+              <li className="mb-2">🗓️ A (free) Monday & Friday 5 min newsletter unless Max gets really carried away.</li>
+              <li className="mb-2">🚕 The most interesting, strange, cool, or downright WILD vehicles for sale online, hand delivered to your e-mail inbox by Max himself.</li>
+              <li className="mb-2">💗 A place in Max's heart (he will love you if you read his emails).</li>
+              <li className="mb-2">🔧 The knowledge that any advertising money Max earns from the newsletter will probably go directly to buying car parts.</li>
+            </ul>
           </div>
-          <h2></h2>
-          <div className='mt-1 gradient-hover' style={{ 
-              background: 'radial-gradient(circle, rgba(251,243,4,1) 0%, rgba(249,180,65,1) 50%, rgba(183,17,22,1) 100%)', 
-              borderRadius: '20px',
-              height: '15vh',
-              width: '50%',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundSize: '200% 200%',
-            }}>
-            <div className="grid grid-cols-2 ml-5 mr-5 p-4">
-              <img src="/bmw.png" alt="BMW Logo" className="object-contain w-2/3"/>
-              <img src="/hagerty.png" alt="Hagerty Logo" className="object-contain w-2/3 h-full"/>
-              <img src="/thehustle.png" alt="Morning Brew Logo" className="object-contain w-2/3 h-full"/>
-              <img src="/morningbrew.png" alt="The Hustle Logo" className="object-contain w-2/3 h-full"/>
-            </div>
+          <div className="md:w-1/2 p-5">
+            {/* <RecentPosts posts={posts} /> */}
           </div>
         </div>
       </div>

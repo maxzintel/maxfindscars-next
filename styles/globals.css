@@ -57,6 +57,16 @@
   background-color: #121212
 }
 
+.bg-antiquewhite {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 235 215 / var(--tw-bg-opacity));
+}
+
+.bg-yellow {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 0 / var(--tw-bg-opacity));
+}
+
 .bg-elevated-1 {
   /* background-color: #202020; */
   background-color: #191919;
