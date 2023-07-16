@@ -19,7 +19,7 @@ const Header = () => {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">MaxFindsCars</span>
-            <img className="h-36 md:h-24 sm:h-24 w-auto object-contain" src={'/logo.png'} alt="Logo" />
+            <img className="h-32 md:h-28 sm:h-28 w-auto object-contain" src={'/logo.png'} alt="Logo" />
           </a>
         </div>
         <div className="flex items-center">
