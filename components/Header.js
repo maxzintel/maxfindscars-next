@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <header className="p-5 justify-between ml-3 mr-3 mt-3 mb-1 bg-antiquewhite">
+    <header className="p-5 justify-between ml-3 mr-3 mt-3 mb-1 bg-antiquewhite rounded-lg">
       <nav className="mx-auto flex max-w-7xl items-center justify-between">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
@@ -23,7 +23,7 @@ const Header = () => {
           </a>
         </div>
         <div className="flex items-center">
-          <button onClick={handleOpenSignupModal} className="p-3 outline-2 border-black border-2 bg-yellow font-bold cursor-pointer">SUBSCRIBE</button>
+          <button onClick={handleOpenSignupModal} className="rounded px-4 py-3 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black text-xl font-bold italic cursor-pointer">SUBSCRIBE</button>
         </div>
       </nav>
       {showSignupModal && <Modal onClose={handleCloseSignupModal} />}

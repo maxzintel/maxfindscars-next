@@ -16,7 +16,7 @@ const StickySubscribeButton = () => {
     <>
       <button
         onClick={handleOpenSignupModal}
-        className="p-3 outline-2 border-black border-2 bg-yellow font-bold cursor-pointer sticky top-10 right-0 z-50">
+        className="p-3 rounded px-4 py-3 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black italic text-xl font-bold cursor-pointer sticky top-10 right-0 z-50">
         SUBSCRIBE
       </button>
       {showSignupModal && <Modal onClose={handleCloseSignupModal} />}

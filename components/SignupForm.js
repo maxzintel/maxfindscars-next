@@ -53,7 +53,7 @@ const SignupForm = () => {
             className="p-3 border mb-3 text-lg w-full md:w-3/4"
           />
         )}
-        <input type="submit" value="SUBSCRIBE" className="p-3 outline-2 border-black border-2 bg-yellow cursor-pointer" />
+        <input type="submit" value="SUBSCRIBE" className="rounded px-4 py-3 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black italic text-xl cursor-pointer" />
       </form>
     </>
   );
