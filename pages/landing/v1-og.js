@@ -4,10 +4,12 @@ import RecentPosts from '@/components/RecentPosts';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContainerContent from '@/components/ContainerContent';
+import axios from 'axios';
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recentposts`);
-  const data = await res.json();
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recentposts`);
+  console.log(process.env.NEXT_PUBLIC_API_BASE_URL)
+  const data = res.data;
   
   return {
     props: {
