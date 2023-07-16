@@ -26,11 +26,12 @@ export default async function handler(req, res) {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${process.env.beehiivKey}`,
         },
+        json: true,
       }
     );
 
-    const post = response.data;
-    console.log(response.data);
+    const post = response.data.data;
+    console.log(response.data.data);
 
     if (post && post.slug === slug) {
       return res.json({ post: post });

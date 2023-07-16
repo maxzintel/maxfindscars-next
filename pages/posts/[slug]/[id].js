@@ -1,11 +1,25 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StickySubscribeButton from '@/components/StickySubscribeButton';
-import axios from 'axios';
 
-const Post = ({ post }) => {
+const Post = () => {
+  const [post, setPost] = useState(null);
   const [showButton, setShowButton] = useState(false);
+  const router = useRouter();
+  const { slug, id } = router.query;  // getting slug and id from query params
+
+  useEffect(() => {
+    if (slug && id) {
+      fetch(`/api/post?slug=${slug}&postId=${id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          setPost(data.post)
+        }); // update to data.data because the post data is nested under the data property
+    }
+  }, [slug, id]);
 
   useEffect(() => {
     const checkScroll = () => {
@@ -24,7 +38,7 @@ const Post = ({ post }) => {
   return (
     <div>
       <Header />
-      {post ? (
+      {post && post.content ? (
         <div className="lg:flex">
           <div className="lg:w-5/6" dangerouslySetInnerHTML={{ __html: post.content.free.web }}></div>
           <div className="lg:w-1/6">
@@ -33,37 +47,12 @@ const Post = ({ post }) => {
         </div>
       ) : (
         <div className="flex justify-center items-center min-h-[30vh]">
-          <img src="/logos/13.gif" alt="Loading" />  {/* In Next.js, static files are served from the /public folder */}
+          <img src="/loading.gif" alt="Loading" />  {/* In Next.js, static files are served from the /public folder */}
         </div>
       )}
       <Footer />
     </div>
   );
 };
-
-export async function getServerSideProps(context) {
-  const { slug, id } = context.params;
-
-  try {
-    const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/post`, 
-      { 
-        params: { slug: slug, postId: id } 
-      }
-    );
-
-    if (response.data.post) {
-      return {
-        props: {
-          post: response.data.post,
-        },
-      };
-    }
-  } catch (error) {
-    return {
-      notFound: true,
-    };
-  }
-}
 
 export default Post;
