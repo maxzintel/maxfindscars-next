@@ -8,10 +8,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        'source': ['SourceSans', 'sans-serif'],
+        'source-italic': ['SourceSansItalic', 'sans-serif'],
         'franklin': ['Franklin', 'sans-serif'],
-        // 'times': ['Times New Roman', 'sans-serif'],
-        // 'grotesk': ['Grotesk', 'sans-serif'],
-        'folio': ['Folio', 'sans-serif']
+        'folio': ['Folio', 'sans-serif'],
+      },
+      fontWeight: {
+        'extra-bold-900': 900,
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

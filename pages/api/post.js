@@ -30,6 +30,7 @@ export default async function handler(req, res) {
     );
 
     const post = response.data;
+    console.log(response.data);
 
     if (post && post.slug === slug) {
       return res.json({ post: post });

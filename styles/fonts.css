@@ -6,27 +6,21 @@
   font-display: swap;
 }
 
-/* @font-face {
-  font-family: 'Times New Roman'; /* Define the custom font name */
-  /* src: url('../styles/fonts/Times\ New\ Roman\ MT\ Std\ Bold.otf') format('woff2'),
-  url('../styles/fonts/Times\ New\ Roman\ MT\ Std\ Italic.otf') format('woff2'),
-  url('../styles/fonts/Times\ New\ Roman\ MT\ Std\ Regular.otf') format('woff2');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-} */
-
-/* @font-face {
-  font-family: 'Grotesk'; /* Define the custom font name */
-  /* src: url('../styles/fonts/Akzidenz-grotesk-light.ttf') format('woff2');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-} */
-
 @font-face {
   font-family: 'Folio'; /* Define the custom font name */
   src: url('../styles/fonts/Folio\ Book\ font.ttf') format('woff2');
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSans';
+  src: url(../styles/fonts/SourceSans3-VariableFont_wght.ttf);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansItalic';
+  src: url(../styles/fonts/SourceSans3-Italic-VariableFont_wght.ttf);
+  font-style: italic;
 }

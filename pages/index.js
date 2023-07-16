@@ -22,7 +22,7 @@ export default function Home({ posts }) {
     <main>
       <Header />
       <div className="container border-black p-5 m-2 mt-0">
-        <h1 className="left-0 font-bold text-3xl">
+        <h1 className="left-0 font-extra-bold-900 italic text-4xl">
           THE MOST INTERESTING CARS ON THE INTERNET, IN YOUR INBOX.
         </h1>
         <h2 className="text-lg left-0 font-bold mt-3">
@@ -37,10 +37,8 @@ export default function Home({ posts }) {
           <p className="p-3 text-base mb-4 mt-4 font-bold">
             📚 Read by the people who build, create, and run...
           </p>
-          <div className="m-2 p-4">
-            <div className='m-2'>
-              <img src="./brands.png" className='max-w-full h-auto' alt="Logos of brands such as BMW, Hagerty, The Hustle, and Morning Brew"/>
-            </div>
+          <div className="m-2 p-3">
+            <img src="./brands.png" className='max-w-1/2max-h-52' alt="Logos of brands such as BMW, Hagerty, The Hustle, and Morning Brew"/>
           </div>
         </div>
       </div>

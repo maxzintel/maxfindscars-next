@@ -80,8 +80,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  font-family: 'Franklin', sans-serif;
+  font-family: 'SourceSans','SourceSansItalic','Franklin','Folio', sans-serif;
   /* font-family: 'Times New Roman', sans-serif;
   font-family: 'Grotesk', sans-serif; */
-  font-family: 'Folio', sans-serif;
 }
