@@ -4,18 +4,15 @@ import RecentPosts from '@/components/RecentPosts';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContainerContent from '@/components/ContainerContent';
-import axios from 'axios';
+import axios from "axios";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recentposts`);
-  console.log(process.env.NEXT_PUBLIC_API_BASE_URL)
-  const data = res.data;
-  
+
   return {
     props: {
-      posts: data.posts,
-    },
-    revalidate: 1, // Re-generate this page every 1 second, if necessary. Adjust the time as needed.
+      posts: res.data.posts,
+    }
   };
 }
 
