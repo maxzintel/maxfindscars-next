@@ -1,7 +1,6 @@
 // pages/index.js
 import React from 'react';
 import ContainerContent from '@/components/ContainerContent';
-import SubscriptionForm from '@/components/SignupForm';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
