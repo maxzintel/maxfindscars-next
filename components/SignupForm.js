@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const SignupForm = () => {
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('🏁 Join to get our free 5 min newsletter showcasing the most interesting cars for sale online!');
+  const [message, setMessage] = useState("🏁 Sign up free and join the world's largest automotive convoy");
   const [isLoading, setIsLoading] = useState(false);
 
   const submitForm = async (event) => {
@@ -49,7 +49,7 @@ const SignupForm = () => {
             name='email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter email address..."
+            placeholder="Enter your email address"
             className="p-3 border mb-3 text-lg w-full md:w-3/4 rounded-lg"
           />
         )}
