@@ -15,7 +15,6 @@ const Post = () => {
       fetch(`/api/post?slug=${slug}&postId=${id}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
           setPost(data.post)
         }); // update to data.data because the post data is nested under the data property
     }
