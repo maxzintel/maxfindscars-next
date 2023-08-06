@@ -1,26 +1,51 @@
-// pages/archive.js
 import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import matter from 'gray-matter';
+import remark from 'remark';
+import html from 'remark-html';
+import fs from 'fs';
+import path from 'path';
 import axios from "axios";
 import Link from 'next/link';
 import StickySubscribeButton from '@/components/StickySubscribeButton';
 
 export async function getServerSideProps(context) {
   const { query } = context;
-  const page = query.page || 1;
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/archive?page=${page}&limit=6&sortByDate=desc&allPosts=no`);
+  const page = parseInt(query.page) || 1;
+  const limit = 6;
+  const guestDirectory = path.join(process.cwd(), 'posts', 'guest');
+  const filenames = fs.readdirSync(guestDirectory);
+  const totalPosts = filenames.length;
+  const totalPages = Math.ceil(totalPosts / limit);
+  
+  const startingIndex = (page - 1) * limit;
+  const endingIndex = startingIndex + limit;
+
+  const slicedFilenames = filenames.slice(startingIndex, endingIndex);
+
+  let posts = [];
+  
+  slicedFilenames.forEach((filename) => {
+    const fullPath = path.join(guestDirectory, filename);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+    posts.push({
+      id: filename.replace(/\.md$/, ''),
+      ...matterResult.data
+    });
+  });
 
   return {
     props: {
-      posts: res.data.posts,
-      totalPages: res.data.totalPages,
+      posts,
+      totalPages,
       currentPage: page,
     }
   };
 }
 
-export default function Archive({ posts, totalPages, currentPage }) {
+export default function GuestArchive({ posts, totalPages, currentPage}) {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -47,9 +72,9 @@ export default function Archive({ posts, totalPages, currentPage }) {
             {posts && posts.length > 0 ? (
               posts.map((post) => (
                 <div key={post.id} className="mb-4 pb-4 border-b border-gray-300">
-                  <Link href={`/posts/${post.slug}/${post.id}`}>
-                      <img src={post.thumbnail_url} alt={post.title} className="mb-2 h-40 w-full object-cover rounded"/>
-                      <p className="text-sm font-semibold">{formatDate(post.publish_date)}</p>
+                  <Link href={`/guest/${post.id}`}>
+                      {/* <img src={post.thumbnail_url} alt={post.title} className="mb-2 h-40 w-full object-cover rounded"/> */}
+                      {/* <p className="text-sm font-semibold">{formatDate(post.publish_date)}</p> */}
                       <h2 className="text-xl font-semibold">{post.title}</h2>
                       <p className="text-sm">{post.preview_text}</p>
                   </Link>
@@ -82,12 +107,3 @@ export default function Archive({ posts, totalPages, currentPage }) {
   );
 }
 
-const formatDate = (timestamp) => {
-  const date = new Date(timestamp * 1000);
-  const monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December',
-  ];
-  const monthName = monthNames[date.getMonth()];
-  return `${monthName} ${date.getDate()}, ${date.getFullYear()}`;
-};
