@@ -73,8 +73,11 @@ export default function GuestArchive({ posts, totalPages, currentPage}) {
               posts.map((post) => (
                 <div key={post.id} className="mb-4 pb-4 border-b border-gray-300">
                   <Link href={`/guest/${post.id}`}>
-                      {/* <img src={post.thumbnail_url} alt={post.title} className="mb-2 h-40 w-full object-cover rounded"/> */}
-                      {/* <p className="text-sm font-semibold">{formatDate(post.publish_date)}</p> */}
+                      <div className='flex m-3 justify-between'>
+                        <p className='text-sm font-semibold'>{post.date}</p>
+                        <p className='text-sm font-semibold'>By {post.author}</p>
+                      </div>
+                      
                       <h2 className="text-xl font-semibold">{post.title}</h2>
                       <p className="text-sm">{post.preview_text}</p>
                   </Link>

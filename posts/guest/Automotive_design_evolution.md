@@ -1,5 +1,7 @@
 ---
 title: "Automotive Design Evolution: Shaping the Future of Mobility"
+author: Bartholomew Gosnold
+date: 08/05/2023
 ---
 
 The world of automotive design has undergone a remarkable evolution since the advent of the automobile. From the early days of horseless carriages to the sleek, technologically advanced vehicles we see on the roads today, automotive design has played a crucial role in shaping the future of mobility. In this comprehensive blog post, we will delve into the fascinating journey of automotive design evolution, exploring its historical roots, influential design movements, technological advancements, and future trends that are shaping the industry.

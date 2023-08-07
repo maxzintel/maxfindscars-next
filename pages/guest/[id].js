@@ -34,10 +34,19 @@ const Post = ({ postData }) => {
   return (
     <div>
       <Header />
-      <div>
-        <h1 className="text-3xl font-bold m-4 text-center">{postData.title}</h1>
-        <div className='lg:flex justify-center'>
-          <div className="prose m-4 lg:w-5/6" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <div className="container mx-auto px-4 py-8 lg:w-2/3">
+        {/* Title and Details */}
+        <div className="border-1 p-4 rounded-lg shadow-md mb-8">
+          <h1 className="text-3xl font-bold mb-4">{postData.title}</h1>
+          <div className="flex justify-between">
+            <p className='text-lg'>By {postData.author}</p>
+            <p className='text-lg'>{postData.date}</p>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="lg:flex justify-center mt-8">
+          <div className="bg-white prose prose-lg m-4 p-6 lg:w-5/6 rounded-lg shadow-lg" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
           <div className="lg:w-1/6">
             {showButton && <StickySubscribeButton />}
           </div>
@@ -45,6 +54,8 @@ const Post = ({ postData }) => {
       </div>
       <Footer />
     </div>
+
+
   );
 };
 
