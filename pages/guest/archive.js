@@ -90,12 +90,12 @@ export default function GuestArchive({ posts, totalPages, currentPage}) {
           <div>
             {/* Pagination */}
             {currentPage > 1 && (
-              <Link className="rounded px-2 py-1 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black italic text-xl cursor-pointer font-bold" href={`/archive?page=${Number(currentPage) + 1}`}>
+              <Link className="rounded px-2 py-1 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black italic text-xl cursor-pointer font-bold" href={`/guest/archive?page=${Number(currentPage) -1 }`}>
                 PREVIOUS
               </Link>
             )}
             {currentPage < totalPages && (
-              <Link className="rounded px-2 py-1 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black italic text-xl cursor-pointer font-bold" href={`/archive?page=${Number(currentPage) + 1}`}>
+              <Link className="rounded px-2 py-1 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black italic text-xl cursor-pointer font-bold" href={`/guest/archive?page=${Number(currentPage) + 1}`}>
                 NEXT
               </Link>
             )}
