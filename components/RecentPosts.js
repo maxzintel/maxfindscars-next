@@ -13,7 +13,7 @@ const RecentPosts = ({ posts }) => {
 
   return (
     <div>
-      <h3 className="text-xl font-bold mb-3">RECENTLY FOUND CARS:</h3>
+      <h3 className="text-xl text-center font-bold mb-3">RECENTLY FOUND CARS:</h3>
       {posts && posts.length > 0 ? (
         posts.map((post) => (
           <div key={post.id} className="mb-4 pb-4 border-b border-gray-300">

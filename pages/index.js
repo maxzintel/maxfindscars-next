@@ -33,23 +33,24 @@ export default function Home({ posts }) {
               <li className="mb-2">💗 A place in Max's heart (he will love you if you read his emails).</li>
               <li className="mb-2">🔧 The knowledge that any advertising money Max earns from the newsletter will probably go directly to buying car parts.</li>
             </ul>
+            <div className='mt-5 text-center'>
+              <h2 className="text-xl font-bold mb-5">📜 WANT TO READ PREVIOUS POSTS?</h2>
+              <h3 className="text-lg font-bold italic mb-3">Check them out in the Post Archive!</h3>
+              <Link href={`/archive`}>
+                <button className="rounded px-4 py-3 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black text-xl font-bold italic cursor-pointer">POST ARCHIVE</button>
+              </Link>
+              <h3 className="text-lg m-3">Looking for Guest Content?</h3>
+              <Link href={`/guest/archive`}>
+                <button className="rounded px-4 py-3 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black text-xl font-bold italic cursor-pointer">GUEST CONTENT</button>
+              </Link>
+            </div>
           </div>
           <div className="md:w-1/2 p-5">
             <RecentPosts posts={posts} />
           </div>
         </div>
       </div>
-      <div className='mt-5 text-center'>
-        <h2 className="text-3xl font-bold mb-5">📜 WANT TO READ PREVIOUS POSTS?</h2>
-        <h3 className="text-xl font-bold italic mb-3">Check them out in the Post Archive!</h3>
-        <Link href={`/archive`}>
-          <button className="rounded px-4 py-3 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black text-xl font-bold italic cursor-pointer">POST ARCHIVE</button>
-        </Link>
-        <h3 className="text-lg m-3">Looking for Guest Content?</h3>
-        <Link href={`/guest/archive`}>
-          <button className="rounded px-4 py-3 m-1 border-b-4 border-l-2 shadow-lg bg-gradient-to-tl from-yellow-500 to-yellow-300 border-yellow-600 text-black text-xl font-bold italic cursor-pointer">GUEST CONTENT</button>
-        </Link>
-      </div>
+      
       <Footer />
     </main>
   );
