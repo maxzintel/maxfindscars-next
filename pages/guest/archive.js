@@ -2,11 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import matter from 'gray-matter';
-import remark from 'remark';
-import html from 'remark-html';
 import fs from 'fs';
 import path from 'path';
-import axios from "axios";
 import Link from 'next/link';
 import StickySubscribeButton from '@/components/StickySubscribeButton';
 
