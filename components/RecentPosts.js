@@ -13,12 +13,13 @@ const RecentPosts = ({ posts }) => {
 
   return (
     <div>
-      <h3 className="text-xl font-bold mb-3">RECENTLY FOUND CARS:</h3>
+      <h3 className="text-xl text-center font-bold mb-3">RECENTLY FOUND CARS:</h3>
       {posts && posts.length > 0 ? (
         posts.map((post) => (
           <div key={post.id} className="mb-4 pb-4 border-b border-gray-300">
             <Link href={`/posts/${post.slug}/${post.id}`}>
               <p className="text-sm font-semibold">{formatDate(post.publish_date)}</p>
+              <img src={post.thumbnail_url} alt={post.title} className="mb-2 h-20 w-1/2 object-cover rounded"/>
               <h4 className="text-lg font-semibold">{post.title}</h4>
               <p className="text-sm">{post.preview_text}</p>
             </Link>
