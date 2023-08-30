@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';  // <-- Import Head component
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StickySubscribeButton from '@/components/StickySubscribeButton';
@@ -8,15 +9,15 @@ const Post = () => {
   const [post, setPost] = useState(null);
   const [showButton, setShowButton] = useState(false);
   const router = useRouter();
-  const { slug, id } = router.query;  // getting slug and id from query params
+  const { slug, id } = router.query;
 
   useEffect(() => {
     if (slug && id) {
       fetch(`/api/post?slug=${slug}&postId=${id}`)
         .then((response) => response.json())
         .then((data) => {
-          setPost(data.post)
-        }); // update to data.data because the post data is nested under the data property
+          setPost(data.post);
+        });
     }
   }, [slug, id]);
 
@@ -36,6 +37,9 @@ const Post = () => {
 
   return (
     <div>
+      <Head>
+        <title>{post ? post.title : 'Loading...'}</title>  {/* <-- Dynamic title */}
+      </Head>
       <Header />
       {post && post.content ? (
         <div className="lg:flex">
@@ -46,7 +50,7 @@ const Post = () => {
         </div>
       ) : (
         <div className="flex justify-center items-center min-h-[30vh]">
-          <img src="/loading.gif" alt="Loading" />  {/* In Next.js, static files are served from the /public folder */}
+          <img src="/loading.gif" alt="Loading" />
         </div>
       )}
       <Footer />

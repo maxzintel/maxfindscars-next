@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import ContainerContent from '@/components/ContainerContent';
 import axios from "axios";
 import Link from 'next/link';
+import Head from 'next/head';
 
 export async function getServerSideProps() {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/recentposts`);
@@ -20,6 +21,12 @@ export async function getServerSideProps() {
 export default function Home({ posts }) {
   return (
     <main>
+      <div>
+        <Head>
+          <title>MaxFindsCars.com: The Most Interesting Cars on the Internet, In Your Inbox.</title>
+          <meta name="description" content="A Free 2x/week newsletter showcasing the most interesting, strange, cool, or wild vehicles for sale online, written by an ex-BMW Engineer."/>
+        </Head>
+      </div>
       <Header />
       <ContainerContent />
       <div className="mt-5">
