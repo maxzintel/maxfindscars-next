@@ -39,6 +39,7 @@ const Post = () => {
     <div>
       <Head>
         <title>{post ? post.title : 'Loading...'}</title>  {/* <-- Dynamic title */}
+        <meta name="description" content={post ? post.title : 'Loading...'} />
       </Head>
       <Header />
       {post && post.content ? (
