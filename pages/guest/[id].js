@@ -8,6 +8,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StickySubscribeButton from '@/components/StickySubscribeButton';
 import { useEffect, useState } from 'react';
+import Head from 'next/head';
+
 
 const Post = ({ postData }) => {
   const [showButton, setShowButton] = useState(false);
@@ -33,6 +35,10 @@ const Post = ({ postData }) => {
 
   return (
     <div>
+      <Head>
+        <title>{postData ? postData.title : 'Loading...'}</title>
+        <meta name="description" content={postData ? postData.title : 'Loading...'} />
+      </Head>
       <Header />
       <div className="container mx-auto px-4 py-8 lg:w-2/3">
         {/* Title and Details */}
